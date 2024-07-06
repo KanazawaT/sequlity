@@ -8,11 +8,28 @@ public class App {
     return "Hello World!";
   }
 
+  public String getSum(int x, int y) {
+    return "Sum of " + x + " and " + y + " is " + new Calculate().sum(x, y) + ". Average is "
+        + new Calculate().average(x, y) + ".";
+  }
+
+  public String getSigma(int x, int y) {
+    return "Sum of " + x + " to " + y + " is " + new Calculate().sigma(x, y) + ". Average is "
+        + new Calculate().average(x, y) + ".";
+  }
+
+  public String getOden(int x, int y) {
+    return "Sum of odd of " + x + " to " + y + " is " + new Calculate().odd(x, y) + ". Sum of even is "
+        + new Calculate().even(x, y)
+        + ".";
+  }
+
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
-    System.out.println("Sum of 2 and 3 is " + new Calculate().sum(2, 3) + ". Average is " + new Calculate().average(2, 3) + ".");
     System.out.println(
-        "Sum of 1 to 10 is " + new Calculate().sigma(1, 10) + ". Average is " + new Calculate().average(1, 10) + ".");
-    System.out.println("Sum of odd of 1 to 10 is " + new Calculate().odd(1, 10) + ". Sum of even is " + new Calculate().even(1, 10) + ".");
+        new App().getSum(2, 3));
+    System.out.println(
+        new App().getSigma(1, 10));
+    System.out.println(new App().getOden(1, 10));
   }
 }
